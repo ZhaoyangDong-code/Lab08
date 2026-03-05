@@ -1,6 +1,7 @@
 package com.example.lab08;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -25,7 +26,16 @@ public class CustomListTest {
     public void testHasCity() {
         City calgary = new City("Calgary", "AB");
         list.addCity(calgary);
-        // This will fail because hasCity() hasn't been implemented yet
         assertTrue(list.hasCity(calgary));
+    }
+
+    @Test
+    public void testDeleteCity() {
+        City city = new City("Regina", "SK");
+        list.addCity(city);
+        assertEquals(1, list.getCount());
+        list.deleteCity(city); // 这里会报错，因为方法还没写
+        assertEquals(0, list.getCount());
+        assertFalse(list.hasCity(city));
     }
 }
