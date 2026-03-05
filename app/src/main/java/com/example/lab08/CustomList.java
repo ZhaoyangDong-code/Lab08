@@ -18,6 +18,14 @@ public class CustomList {
         return cities.size();
     }
 
-    // Will be implemented later using TDD (leave blank for now)
-    // public boolean hasCity(City city) { ... }
+    /**
+     * This checks if the city belongs to the list
+     * @param city
+     *      the city to check
+     * @return
+     *      true if the city belongs to the list, false otherwise
+     */
+    public boolean hasCity(City city) {
+        return cities.contains(city);
+    }
 }
