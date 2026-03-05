@@ -27,13 +27,6 @@ public class CustomList {
         return cities.contains(city);
     }
 
-    /**
-     * This deletes a city from the list if the city exists.
-     * @param city
-     *      This is a candidate city to delete
-     * @throws IllegalArgumentException
-     *      Thrown if the city does not exist in the list
-     */
     public void deleteCity(City city) {
         if (!cities.contains(city)) {
             throw new IllegalArgumentException();
@@ -41,9 +34,14 @@ public class CustomList {
         cities.remove(city);
     }
 
+    /**
+     * COUNT CITIES IS TEMPORARILY REMOVED FOR TDD RED PHASE PUSH
+     */
+    /*
     public int countCities() {
         return cities.size();
     }
+    */
     
     public int getCount() {
         return cities.size();
