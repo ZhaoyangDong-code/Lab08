@@ -35,13 +35,13 @@ public class CustomList {
     }
 
     /**
-     * COUNT CITIES IS TEMPORARILY REMOVED FOR TDD RED PHASE PUSH
+     * This returns the number of cities in the list.
+     * @return
+     *      Return the number of cities
      */
-    /*
     public int countCities() {
         return cities.size();
     }
-    */
     
     public int getCount() {
         return cities.size();
