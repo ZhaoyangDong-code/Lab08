@@ -2,6 +2,7 @@ package com.example.lab08;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -17,7 +18,6 @@ public class CustomListTest {
 
     @Test
     public void addCityTest() {
-        // We can keep using getCount here if you want, but for countCities TDD:
         list.addCity(new City("Edmonton", "AB"));
         assertEquals(1, list.getCount());
     }
@@ -43,7 +43,23 @@ public class CustomListTest {
     public void testCountCities() {
         City city = new City("Charlottetown", "PEI");
         list.addCity(city);
-        // This will fail because countCities() is not defined yet
         assertEquals(1, list.countCities());
+    }
+
+    @Test
+    public void testDeleteCityException() {
+        City city = new City("Yellowknife", "NT");
+        assertThrows(IllegalArgumentException.class, () -> {
+            list.deleteCity(city);
+        });
+    }
+
+    @Test
+    public void testAddCityException() {
+        City city = new City("Edmonton", "AB");
+        list.addCity(city);
+        assertThrows(IllegalArgumentException.class, () -> {
+            list.addCity(city);
+        });
     }
 }
