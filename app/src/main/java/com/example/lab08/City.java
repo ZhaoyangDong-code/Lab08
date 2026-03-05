@@ -2,10 +2,6 @@ package com.example.lab08;
 
 import java.util.Objects;
 
-/**
- * This is a class that defines a City.
- * It contains the name of the city and the province it belongs to.
- */
 public class City implements Comparable<City> {
     private String city;
     private String province;
@@ -23,17 +19,11 @@ public class City implements Comparable<City> {
         return this.province;
     }
 
-    /**
-     * This compares this city to another city based on their names.
-     */
     @Override
     public int compareTo(City city) {
         return this.city.compareTo(city.getCityName());
     }
 
-    /**
-     * Two cities are considered equal if they have the same name and province.
-     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
