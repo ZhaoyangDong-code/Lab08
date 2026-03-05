@@ -17,9 +17,9 @@ public class CustomListTest {
 
     @Test
     public void addCityTest() {
-        int listSize = list.getCount();
+        // We can keep using getCount here if you want, but for countCities TDD:
         list.addCity(new City("Edmonton", "AB"));
-        assertEquals(list.getCount(), listSize + 1);
+        assertEquals(1, list.getCount());
     }
 
     @Test
@@ -34,8 +34,16 @@ public class CustomListTest {
         City city = new City("Regina", "SK");
         list.addCity(city);
         assertEquals(1, list.getCount());
-        list.deleteCity(city); // 这里会报错，因为方法还没写
+        list.deleteCity(city);
         assertEquals(0, list.getCount());
         assertFalse(list.hasCity(city));
+    }
+
+    @Test
+    public void testCountCities() {
+        City city = new City("Charlottetown", "PEI");
+        list.addCity(city);
+        // This will fail because countCities() is not defined yet
+        assertEquals(1, list.countCities());
     }
 }
