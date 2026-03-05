@@ -28,16 +28,18 @@ public class CustomList {
     }
 
     /**
-     * DELETE CITY IS TEMPORARILY REMOVED FOR TDD RED PHASE PUSH
+     * This deletes a city from the list if the city exists.
+     * @param city
+     *      This is a candidate city to delete
+     * @throws IllegalArgumentException
+     *      Thrown if the city does not exist in the list
      */
-    /*
     public void deleteCity(City city) {
         if (!cities.contains(city)) {
             throw new IllegalArgumentException();
         }
         cities.remove(city);
     }
-    */
 
     public int countCities() {
         return cities.size();
